@@ -13,6 +13,10 @@ module.exports = {
                     600: '#C47F17',
                 },
             },
+            fontFamily: {
+                sans: 'Roboto, sans-serif',
+                baloo: `'Baloo 2', cursive;`,
+            },
         },
     },
     plugins: [],
