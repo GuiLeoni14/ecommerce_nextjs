@@ -1,3 +1,6 @@
+import { ChangeEvent, useEffect, useState } from 'react';
+import { useCheckout } from '../hooks/useCheckout';
+
 type CardProductProps = {
     id: number;
     name: string;
@@ -8,6 +11,17 @@ type CardProductProps = {
 };
 
 export function CardProduct(props: CardProductProps) {
+    const [inputQuantity, setInputQuantity] = useState(0);
+    const { addProductCheckout } = useCheckout();
+    const handleClickBuyProduct = () => {
+        if (inputQuantity < 1) return;
+        const buyProduct = {
+            ...props,
+            quant: Number(inputQuantity),
+        };
+        addProductCheckout(buyProduct);
+    };
+
     return (
         <div className="flex flex-col items-center w-full max-w-[256px] bg-neutral-100 rounded-tl-[6px] rounded-tr-[20px] rounded-bl-[20px]  rounded-br-[6px] pb-5">
             <div className="max-w-[220px] w-full h-40 max-h-40 mt-[-20px] overflow-hidden ">
@@ -29,9 +43,14 @@ export function CardProduct(props: CardProductProps) {
                 <div className="flex items-center  gap-2">
                     <input
                         type="number"
+                        defaultValue={0}
+                        min="1"
                         className="max-w-[72px] text-gray-600 h-[38px] bg-stone-200 outline-none text-center rounded-md font-bold"
+                        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            setInputQuantity(Number(event.target.value))
+                        }
                     />
-                    <img src="/img/icons/icon_cart_purple.svg" />
+                    <img src="/img/icons/icon_cart_purple.svg" onClick={handleClickBuyProduct} />
                 </div>
             </div>
         </div>
