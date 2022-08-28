@@ -2,7 +2,7 @@ import { Input } from './Input';
 
 export function AddressContent() {
     return (
-        <div className="w-full max-w-[640px] ">
+        <div className="w-full max-w-[640px]">
             <h4 className="font-baloo text-[18px] font-bold">Complete seu pedido</h4>
             <div className="w-full p-10 bg-neutral-100 mt-[15px]">
                 <div className="flex items-start justify-start gap-2">
@@ -12,7 +12,7 @@ export function AddressContent() {
                         Informe o endereço onde deseja receber seu pedido
                     </span>
                 </div>
-                <div className="flex flex-wrap gap-x-3 gap-y-4">
+                <div className="flex flex-wrap gap-x-3 gap-y-4 mt-8">
                     <Input name="cep" placeholder="CEP" />
                     <Input name="rua" placeholder="Rua" width="sm" />
                     <Input name="numero" placeholder="Número" width="xlg" />
