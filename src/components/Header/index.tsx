@@ -15,7 +15,7 @@ export function Header() {
                         <span className="ml-1">Porto Alegre, RS</span>
                     </div>
                     <div className="relative">
-                        <Link href="/checkout/session/">
+                        <Link href="/checkout">
                             <a>
                                 <img src="/img/icons/icon_cart.svg" />
                                 <span className="absolute top-[-10px] right-[-5px] w-5 h-5 flex tex-[12px] items-center justify-center bg-yellow-600 rounded-full text-white font-bold">

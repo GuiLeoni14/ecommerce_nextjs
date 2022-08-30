@@ -1,5 +1,6 @@
 import { Header } from '../../components/Header';
 import { AddressContent } from './AddressContent';
+import { BuyContent } from './BuyContent';
 import { PaymentMethods } from './PaymentMethods';
 
 export function CheckoutTemplate() {
@@ -12,6 +13,7 @@ export function CheckoutTemplate() {
                         <AddressContent />
                         <PaymentMethods />
                     </div>
+                    <BuyContent />
                 </div>
             </main>
         </>
